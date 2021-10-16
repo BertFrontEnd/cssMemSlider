@@ -14,7 +14,6 @@ body {
 }
 
 body .carousel-container {
-  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -28,7 +27,7 @@ body .carousel-container {
       flex-wrap: wrap;
   width: 400px;
   margin: 20px;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 body .carousel-container input {
@@ -49,8 +48,6 @@ body .carousel-container .carousel-image {
   margin-bottom: 20px;
   -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
           box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  -webkit-transition: opacity 0.5s ease-out;
-  transition: opacity 0.5s ease-out;
 }
 
 body .carousel-container .carousel-description {
@@ -59,12 +56,12 @@ body .carousel-container .carousel-description {
 }
 
 body .carousel-container .carousel-description .description-title {
+  position: relative;
+  right: -20px;
   display: none;
   width: 150px;
   text-align: center;
   opacity: 0;
-  -webkit-transition: opacity 0.5s ease-out;
-  transition: opacity 0.5s ease-out;
 }
 
 body .carousel-container .carousel-indicators {
@@ -142,7 +139,15 @@ li:nth-child(4)
 body .carousel-container #carousel-1:checked ~ .carousel-image-1,
 body .carousel-container #carousel-2:checked ~ .carousel-image-2,
 body .carousel-container #carousel-3:checked ~ .carousel-image-3,
-body .carousel-container #carousel-4:checked ~ .carousel-image-4,
+body .carousel-container #carousel-4:checked ~ .carousel-image-4 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  opacity: 1;
+  -webkit-animation: animate 2s;
+          animation: animate 2s;
+}
+
 body .carousel-container #carousel-1:checked ~ .carousel-description .description-title-1,
 body .carousel-container #carousel-2:checked ~ .carousel-description .description-title-2,
 body .carousel-container #carousel-3:checked ~ .carousel-description .description-title-3,
@@ -151,8 +156,31 @@ body .carousel-container #carousel-4:checked ~ .carousel-description .descriptio
   display: -ms-flexbox;
   display: flex;
   opacity: 1;
-  -webkit-transition: opacity 0.5s ease-out;
-  transition: opacity 0.5s ease-out;
+  right: 0;
+  -webkit-animation: animate 2s;
+          animation: animate 2s;
+}
+
+@-webkit-keyframes animate {
+  0% {
+    opacity: 0;
+    right: -20px;
+  }
+  100% {
+    opacity: 1;
+    right: 0;
+  }
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0;
+    right: -20px;
+  }
+  100% {
+    opacity: 1;
+    right: 0;
+  }
 }
 
 @media (max-width: 420px) {

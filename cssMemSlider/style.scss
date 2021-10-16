@@ -13,14 +13,13 @@ body {
   background-color: $background-color;
 
   .carousel-container {
-    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     width: 400px;
     margin: 20px;
-    overflow: hidden;
+    /* overflow: hidden; */
 
     input {
       display: none;
@@ -37,7 +36,6 @@ body {
       margin-bottom: 20px;
       box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
         0 10px 10px rgba(0, 0, 0, 0.22);
-      transition: opacity 0.5s ease-out;
     }
 
     .carousel-description {
@@ -45,11 +43,12 @@ body {
       font-size: 24px;
 
       .description-title {
+        position: relative;
+        right: -20px;
         display: none;
         width: 150px;
         text-align: center;
         opacity: 0;
-        transition: opacity 0.5s ease-out;
       }
     }
 
@@ -105,15 +104,32 @@ body {
     #carousel-1:checked ~ .carousel-image-1,
     #carousel-2:checked ~ .carousel-image-2,
     #carousel-3:checked ~ .carousel-image-3,
-    #carousel-4:checked ~ .carousel-image-4,
+    #carousel-4:checked ~ .carousel-image-4 {
+      display: flex;
+      opacity: 1;
+      animation: animate 2s;
+    }
+
     #carousel-1:checked ~ .carousel-description .description-title-1,
     #carousel-2:checked ~ .carousel-description .description-title-2,
     #carousel-3:checked ~ .carousel-description .description-title-3,
     #carousel-4:checked ~ .carousel-description .description-title-4 {
       display: flex;
       opacity: 1;
-      transition: opacity 0.5s ease-out;
+      right: 0;
+      animation: animate 2s;
     }
+  }
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0;
+    right: -20px;
+  }
+  100% {
+    opacity: 1;
+    right: 0;
   }
 }
 
