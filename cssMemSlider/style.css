@@ -9,9 +9,9 @@ html body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   height: 100vh;
   color: #f5ede1;
   background-color: #504d21;
@@ -24,9 +24,9 @@ html body .carousel-container {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   width: 40rem;
@@ -48,7 +48,7 @@ html body .carousel-container .carousel-image {
      object-fit: contain;
   opacity: 0;
   border-radius: 5%;
-  margin-bottom: 2rem;
+  margin-bottom: 4em;
   -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
           box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
@@ -233,7 +233,7 @@ html body .carousel-container #carousel-4:checked ~ .carousel-description .descr
         -ms-flex-order: 2;
             order: 2;
     width: 100%;
-    margin: 0 auto 10px auto;
+    margin: 0 auto 2rem auto;
   }
 }
 /*# sourceMappingURL=style.css.map */
