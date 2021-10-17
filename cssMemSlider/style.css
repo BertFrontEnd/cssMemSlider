@@ -13,8 +13,8 @@ html body {
       -ms-flex-align: center;
           align-items: center;
   height: 100vh;
-  color: #ff6768;
-  background-color: #17223b;
+  color: #f5ede1;
+  background-color: #504d21;
 }
 
 html body .carousel-container {
@@ -54,7 +54,7 @@ html body .carousel-container .carousel-image {
 }
 
 html body .carousel-container .carousel-description {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Vollkorn SC', serif;
   width: 50%;
   font-size: 1.8rem;
 }
@@ -101,10 +101,10 @@ html body .carousel-container .carousel-indicators li .carousel-bullet {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  border: 10px solid #17223b;
+  border: 10px solid #504d21;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
-  background-color: #6b778d;
+  background-color: #615f56;
   -webkit-transition: background-color 0.5s ease-out;
   transition: background-color 0.5s ease-out;
   cursor: pointer;
@@ -132,7 +132,7 @@ html body .carousel-container #carousel-4:checked
 ~ .carousel-indicators
 li:nth-child(4)
 .carousel-bullet {
-  background-color: #ff6768;
+  background-color: #a4873b;
 }
 
 html body .carousel-container #carousel-1:checked
