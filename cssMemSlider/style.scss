@@ -1,0 +1,173 @@
+$background-color: rgb(80, 77, 33);
+$checked-background-color: rgba(164, 135, 59, 1);
+$hover-background-color: rgb(171, 171, 171);
+$fill-color: rgba(97, 95, 86, 1);
+$text-color: rgba(245, 237, 225, 1);
+
+html {
+  font-size: 10px;
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    color: $text-color;
+    background-color: $background-color;
+
+    .carousel-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      width: 40rem;
+      margin: 2rem;
+
+      input {
+        display: none;
+        appearance: none;
+      }
+
+      .carousel-image {
+        display: none;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        opacity: 0;
+        border-radius: 5%;
+        margin-bottom: 4em;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+          0 10px 10px rgba(0, 0, 0, 0.22);
+      }
+
+      .carousel-description {
+        font-family: 'Vollkorn SC', serif;
+        width: 50%;
+        font-size: 1.8rem;
+
+        .description-title {
+          position: relative;
+          right: -20px;
+          display: none;
+          text-align: left;
+          opacity: 0;
+        }
+      }
+
+      .carousel-indicators {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 2px;
+        width: 27%;
+
+        li {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+          cursor: pointer;
+
+          .carousel-bullet {
+            display: block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 10px solid $background-color;
+            box-sizing: content-box;
+            background-color: $fill-color;
+            transition: background-color 0.5s ease-out;
+            cursor: pointer;
+
+            &:hover {
+              background-color: $hover-background-color;
+              transition: background-color 0.5s ease-out;
+            }
+          }
+        }
+      }
+
+      #carousel-1:checked
+        ~ .carousel-indicators
+        li:nth-child(1)
+        .carousel-bullet,
+      #carousel-2:checked
+        ~ .carousel-indicators
+        li:nth-child(2)
+        .carousel-bullet,
+      #carousel-3:checked
+        ~ .carousel-indicators
+        li:nth-child(3)
+        .carousel-bullet,
+      #carousel-4:checked
+        ~ .carousel-indicators
+        li:nth-child(4)
+        .carousel-bullet {
+        background-color: $checked-background-color;
+
+        &:hover {
+          background-color: $hover-background-color;
+          transition: background-color 0.5s ease-out;
+        }
+      }
+
+      #carousel-1:checked ~ .carousel-image-1,
+      #carousel-2:checked ~ .carousel-image-2,
+      #carousel-3:checked ~ .carousel-image-3,
+      #carousel-4:checked ~ .carousel-image-4 {
+        display: flex;
+        opacity: 1;
+        animation: animate 2s;
+      }
+
+      #carousel-1:checked ~ .carousel-description .description-title-1,
+      #carousel-2:checked ~ .carousel-description .description-title-2,
+      #carousel-3:checked ~ .carousel-description .description-title-3,
+      #carousel-4:checked ~ .carousel-description .description-title-4 {
+        display: flex;
+        opacity: 1;
+        right: 0;
+        animation: animate 2s;
+      }
+    }
+  }
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0;
+    right: -20px;
+  }
+  100% {
+    opacity: 1;
+    right: 0;
+  }
+}
+
+@media (max-width: 420px) {
+  html {
+    body {
+      .carousel-container {
+        justify-content: flex-start;
+        flex-direction: column;
+
+        .carousel-image {
+          order: 1;
+        }
+
+        .carousel-description {
+          order: 3;
+          font-size: 1.6rem;
+          width: 100%;
+          align-self: left;
+        }
+
+        .carousel-indicators {
+          order: 2;
+          width: 100%;
+          margin: 0 auto 2rem auto;
+        }
+      }
+    }
+  }
+}
